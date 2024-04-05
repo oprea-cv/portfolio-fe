@@ -1,3 +1,4 @@
+import RootLayout from "@/components/layout/root-layout";
 import { ModeToggle } from "@/components/shared/theme-toggle";
 
 import {
@@ -13,26 +14,28 @@ export default function Home() {
   // const isMedium = useMediaQuery({ maxWidth: breakpoints.md });
 
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24`}
-    >
-      <ModeToggle />
-      <h1 className={`text-4xl font-bold`}>Hello, World!</h1>
+    <RootLayout>
+      <section
+        className={`flex min-h-screen flex-col items-center justify-between p-1`}
+      >
+        <ModeToggle />
+        <h1 className={`text-4xl font-bold`}>Hello, World!</h1>
 
-      <InputOTP maxLength={7}>
-        <InputOTPGroup>
-          <InputOTPSlot index={0} />
-          <InputOTPSlot index={1} />
-          <InputOTPSlot index={2} />
-        </InputOTPGroup>
-        <InputOTPSeparator />
-        <InputOTPGroup>
-          <InputOTPSlot index={3} />
-          <InputOTPSlot index={4} />
-          <InputOTPSlot index={5} />
-          <InputOTPSlot index={6} />
-        </InputOTPGroup>
-      </InputOTP>
-    </main>
+        <InputOTP maxLength={7}>
+          <InputOTPGroup>
+            <InputOTPSlot index={0} />
+            <InputOTPSlot index={1} />
+            <InputOTPSlot index={2} />
+          </InputOTPGroup>
+          <InputOTPSeparator />
+          <InputOTPGroup>
+            <InputOTPSlot index={3} />
+            <InputOTPSlot index={4} />
+            <InputOTPSlot index={5} />
+            <InputOTPSlot index={6} />
+          </InputOTPGroup>
+        </InputOTP>
+      </section>
+    </RootLayout>
   );
 }

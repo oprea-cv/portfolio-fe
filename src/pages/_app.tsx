@@ -1,14 +1,9 @@
 import Head from "next/head";
 import { ThemeProvider } from "@/components/shared/theme-provider";
 import type { AppProps } from "next/app";
-import { Montserrat } from "next/font/google";
 
 import "@/styles/index.scss";
-
-const defaultFont = Montserrat({
-  weight: "400",
-  subsets: ["latin"],
-});
+import { fontSans } from "@/lib/fonts";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -22,7 +17,7 @@ export default function App({ Component, pageProps }: AppProps) {
         enableSystem
         disableTransitionOnChange
       >
-        <div className={defaultFont.className}>
+        <div className={fontSans.className}>
           <Component {...pageProps} />
         </div>
       </ThemeProvider>

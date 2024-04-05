@@ -25,9 +25,9 @@ const config: Config = {
     "^@/(.*)$": "<rootDir>/src/$1",
   },
   collectCoverageFrom: [
-    '**/*.{ts,tsx,js,jsx}',
-    '!**/node_modules/**',
-    '!**/vendor/**',
+    "**/*.{ts,tsx,js,jsx}",
+    "!**/node_modules/**",
+    "!**/vendor/**",
   ],
 };
 
