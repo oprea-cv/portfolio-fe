@@ -10,10 +10,12 @@ import { useMediaQuery } from "@/hooks";
 import { breakpoints } from "@/utils/constants";
 
 export default function Home() {
-  const isMedium = useMediaQuery({ maxWidth: breakpoints.md });
+  // const isMedium = useMediaQuery({ maxWidth: breakpoints.md });
 
   return (
-    <main className={`flex min-h-screen flex-col items-center justify-between p-24`}>
+    <main
+      className={`flex min-h-screen flex-col items-center justify-between p-24`}
+    >
       <ModeToggle />
       <h1 className={`text-4xl font-bold`}>Hello, World!</h1>
 

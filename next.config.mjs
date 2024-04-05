@@ -5,7 +5,9 @@ const nextConfig = {
   reactStrictMode: true,
   sassOptions: {
     sassOptions: {
-      includePaths: [path.resolve(new URL(".", import.meta.url).pathname, "styles")],
+      includePaths: [
+        path.resolve(new URL(".", import.meta.url).pathname, "styles"),
+      ],
     },
   },
 };
