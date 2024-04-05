@@ -1,5 +1,4 @@
-import { Inter } from "next/font/google";
-import { ModeToggle } from "@/components/theme-toggle";
+import { ModeToggle } from "@/components/shared/theme-toggle";
 
 import {
   InputOTP,
@@ -11,7 +10,6 @@ import { useMediaQuery } from "@/hooks";
 import { breakpoints } from "@/utils/constants";
 
 export default function Home() {
-
   const isMedium = useMediaQuery({ maxWidth: breakpoints.md });
 
   return (
