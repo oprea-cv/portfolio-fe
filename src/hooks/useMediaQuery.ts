@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 type QueryInput = {
   maxWidth?: number;
@@ -17,7 +17,7 @@ const useMediaQuery = (queryInput: QueryInput): boolean => {
       queryInput.maxHeight && `(max-height: ${queryInput.maxHeight}px)`,
     ]
       .filter(Boolean)
-      .join(' and ');
+      .join(" and ");
 
   const [matches, setMatches] = useState<boolean>(false);
 
@@ -34,10 +34,10 @@ const useMediaQuery = (queryInput: QueryInput): boolean => {
       setMatches(event.matches);
     };
 
-    mediaQueryList.addEventListener('change', listener);
+    mediaQueryList.addEventListener("change", listener);
 
     return () => {
-      mediaQueryList.removeEventListener('change', listener);
+      mediaQueryList.removeEventListener("change", listener);
     };
   }, [queryString]);
 
