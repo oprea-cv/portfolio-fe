@@ -1,12 +1,11 @@
 export const siteConfig = {
-  name: "shadcn/ui",
-  url: "https://ui.shadcn.com",
-  ogImage: "https://ui.shadcn.com/og.jpg",
-  description:
-    "Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open Source.",
+  name: "Dan",
+  url: `/`,
   links: {
-    twitter: "https://twitter.com/shadcn",
-    github: "https://github.com/shadcn-ui/ui",
+    twitter: "https://twitter.com/oprea_danu",
+    github: "https://github.com/danop-dev",
+    linkedin: "https://www.linkedin.com/in/danuoprea/",
+    telegram: "https://t.me/danopdev",
   },
 };
 
