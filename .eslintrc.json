@@ -8,11 +8,27 @@
   },
   "ignorePatterns": ["node_modules", ".next", "out", "dist"],
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint", "react-refresh"],
+  "plugins": ["@typescript-eslint", "react-refresh", "import-order"],
   "rules": {
     "react-refresh/only-export-components": [
       "warn",
       { "allowConstantExport": true }
+    ],
+    "import-order/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          ["parent", "sibling", "index"]
+        ],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
     ]
   }
 }

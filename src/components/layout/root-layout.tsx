@@ -1,9 +1,8 @@
-import { Metadata } from "next";
-
+import { SiteHeader } from "@/components/site-header";
 import { fontSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
-import { SiteHeader } from "@/components/site-header";
 import { TailwindIndicator } from "@components/shared";
+import { Metadata } from "next";
 
 interface RootLayoutProps {
   children: React.ReactNode;

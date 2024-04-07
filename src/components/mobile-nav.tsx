@@ -1,14 +1,9 @@
 "use client";
 
-import * as React from "react";
-import Link, { LinkProps } from "next/link";
-import { useRouter } from "next/navigation";
-import { ViewVerticalIcon } from "@radix-ui/react-icons";
-
+import { Icons } from "@/components/shared/icons";
 import { docsConfig } from "@/config/docs";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
-import { Icons } from "@/components/shared/icons";
 import {
   Button,
   ScrollArea,
@@ -16,6 +11,10 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@components/ui";
+import { ViewVerticalIcon } from "@radix-ui/react-icons";
+import Link, { LinkProps } from "next/link";
+import { useRouter } from "next/navigation";
+import * as React from "react";
 
 export function MobileNav() {
   const [open, setOpen] = React.useState(false);

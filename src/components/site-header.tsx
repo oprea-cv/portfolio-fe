@@ -1,13 +1,12 @@
-import Link from "next/link";
-
-import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
+import { MobileNav } from "./mobile-nav";
+import { MainNav } from "@/components/main-nav";
 // import { CommandMenu } from "@/components/theme-toggle";
 import { Icons } from "@/components/shared";
-import { MainNav } from "@/components/main-nav";
 import { ModeToggle } from "@/components/shared/theme-toggle";
+import { siteConfig } from "@/config/site";
+import { cn } from "@/lib/utils";
 import { buttonVariants } from "@components/ui";
-import { MobileNav } from "./mobile-nav";
+import Link from "next/link";
 
 export function SiteHeader() {
   return (
