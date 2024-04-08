@@ -26,7 +26,7 @@ export function MainNav() {
             pathname === "/docs" ? "text-foreground" : "text-foreground/60",
           )}
         >
-          Docs
+          Home
         </Link>
         <Link
           href="/docs/components"
@@ -37,7 +37,7 @@ export function MainNav() {
               : "text-foreground/60",
           )}
         >
-          Components
+          Profile
         </Link>
         <Link
           href="/themes"
@@ -48,7 +48,7 @@ export function MainNav() {
               : "text-foreground/60",
           )}
         >
-          Themes
+          About
         </Link>
         <Link
           href="/examples"
@@ -59,7 +59,7 @@ export function MainNav() {
               : "text-foreground/60",
           )}
         >
-          Examples
+          Contact
         </Link>
         <Link
           href="/blocks"
@@ -70,7 +70,7 @@ export function MainNav() {
               : "text-foreground/60",
           )}
         >
-          Blocks
+          Resume
         </Link>
         <Link
           href={siteConfig.links.github}

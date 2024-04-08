@@ -1,6 +1,5 @@
-import { MobileNav } from "./mobile-nav";
-import { MainNav } from "@/components/main-nav";
-// import { CommandMenu } from "@/components/theme-toggle";
+import { MobileNav } from "@/components";
+import { MainNav } from "@/components";
 import { Icons } from "@/components/shared";
 import { ModeToggle } from "@/components/shared/theme-toggle";
 import { siteConfig } from "@/config/site";
