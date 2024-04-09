@@ -1,8 +1,8 @@
 import { MainNav, MobileNav } from "@/components";
+import { MediaList } from "@/components/navigation";
 import { cn } from "@/lib/utils";
 import { useAppSelector } from "@/store/hooks/useAppSelector";
 import { motion } from "framer-motion";
-import MediaList from "../navigation/media-nav";
 
 export function SiteHeader() {
   const isScrolling = useAppSelector((state) => state.ui.isScrolling);
