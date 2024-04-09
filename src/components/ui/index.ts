@@ -36,3 +36,4 @@ export * from "./tabs";
 export * from "./toggle";
 export * from "./toggle-group";
 export * from "./tooltip";
+export { default as Typography } from "./typography";
