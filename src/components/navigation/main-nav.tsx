@@ -6,57 +6,71 @@ import { siteConfig } from "@/config/site";
 import {
   NavigationMenu,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
 } from "@components/ui";
+import { motion } from "framer-motion";
 import Link from "next/link";
+
+const itemsMenu = [
+  {
+    title: "Home",
+    href: "/",
+  },
+  {
+    title: "Profile",
+    href: "/profile",
+  },
+  {
+    title: "About",
+    href: "/about",
+  },
+  {
+    title: "Resume",
+    href: "/resume",
+  },
+  {
+    title: "Contact",
+    href: "/contact",
+  },
+];
 
 export function MainNav() {
   return (
     <div className="sm:justify mr-4 hidden md:flex">
       <Link href="/" className="mr-6 flex items-center space-x-2">
-        <Icons.logo className="h-6 w-6" />
-        <span className="hidden font-bold sm:inline-block">
-          {siteConfig.name}
-        </span>
+        <motion.div
+          className="flex items-center space-x-2"
+          whileTap={{ scale: 0.8 }}
+        >
+          <Icons.logo className="h-6 w-6" />
+          <span className="hidden font-bold sm:inline-block">
+            {siteConfig.name}
+          </span>
+        </motion.div>
       </Link>
       <NavigationMenu>
         <NavigationMenuList>
-          <NavigationMenuItem>
-            <Link href="/docs" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Home
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link href="/docs" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Profile
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link href="/docs" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                About
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link href="/docs" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Resume
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link href="/docs" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Contact
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
+          {itemsMenu.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{
+                opacity: 0,
+                x: -50,
+              }}
+              animate={{
+                opacity: [0, 1],
+                x: 0,
+              }}
+              whileTap={{ scale: 0.8 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <NavigationMenuItem>
+                <Link href={item.href} className={navigationMenuTriggerStyle()}>
+                  {item.title}
+                </Link>
+              </NavigationMenuItem>
+            </motion.div>
+          ))}
         </NavigationMenuList>
       </NavigationMenu>
     </div>

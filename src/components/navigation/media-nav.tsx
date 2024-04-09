@@ -9,7 +9,6 @@ import {
 } from "@/components/ui";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
-import { useAppSelector } from "@/store/hooks/useAppSelector";
 import { NavigationMenuItem } from "@radix-ui/react-navigation-menu";
 import React from "react";
 import { Separator } from "../ui/separator";
@@ -44,7 +43,6 @@ interface MediaListProp {
 
 export const MediaList: React.FC<MediaListProp> = (props) => {
   const { type = "vertical", separator = false } = props;
-  const isScrolling = useAppSelector((state) => state.ui.isScrolling);
 
   return (
     <NavigationMenu>

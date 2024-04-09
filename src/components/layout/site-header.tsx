@@ -20,11 +20,12 @@ export function SiteHeader() {
       maxWidth: isScrolling ? "800px" : "100%",
       top: isScrolling ? "1.5rem" : "auto",
       margin: isScrolling ? "0" : "1rem auto",
-      borderRadius: isScrolling ? "0.5rem" : "",
+      borderRadius: isScrolling ? "0.5rem" : 0,
       boxShadow: isScrolling
         ? "0px 1px 0.25rem 0.125rem rgba(75, 85, 99,0.2)"
         : "",
       border: isScrolling ? "1px solid rgba(75, 85, 99,0.2)" : "",
+      borderBottom: !isScrolling ? "1px solid rgba(75, 85, 99, 0.2)" : "",
     },
     transition: {
       duration: 0.3,

@@ -6,20 +6,29 @@ import { useActions } from "@/store/hooks/useActions";
 import { useAppSelector } from "@/store/hooks/useAppSelector";
 import { TailwindIndicator } from "@components/shared";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
-import React from "react";
+import { useRouter } from "next/router";
+import React, { useEffect } from "react";
 interface RootLayoutProps {
   children: React.ReactNode;
 }
 
-export default function RootLayout({ children }: RootLayoutProps) {
+export const RootLayout = ({ children }: RootLayoutProps) => {
   const scrollRef = React.useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll({ container: scrollRef });
   const { setScrollYContainer } = useActions();
   const isScrolling = useAppSelector((state) => state.ui.isScrolling);
+  const router = useRouter();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setScrollYContainer(latest);
   });
+
+  useEffect(() => {
+    setScrollYContainer(scrollY.get());
+    if (scrollRef.current) {
+      scrollRef.current.scrollTop = 0;
+    }
+  }, [router.pathname]);
 
   return (
     <div
@@ -56,4 +65,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <TailwindIndicator />
     </div>
   );
-}
+};
+
+export default RootLayout;
