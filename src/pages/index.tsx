@@ -13,7 +13,7 @@ const PreviewPage = () => {
   return (
     <RootLayout>
       <motion.div
-        className={cn(`p-1 relative flex align-center justify-center h-[80vh]`)}
+        className={cn(`p-1 relative flex align-center justify-center h-[80vh] mt-20`)}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
