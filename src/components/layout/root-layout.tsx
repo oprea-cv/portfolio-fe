@@ -40,7 +40,7 @@ export const RootLayout = ({ children }: RootLayoutProps) => {
     >
       <div className="flex h-screen flex-col px-2">
         <SiteHeader />
-        <section className="max-w-screen-2xl p-4 mx-auto w-full flex-1">
+        <section className="max-w-screen-2xl p-4 mx-auto w-full flex-1 relative">
           {children}
         </section>
 
