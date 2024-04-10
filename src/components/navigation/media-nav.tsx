@@ -5,13 +5,14 @@ import {
   NavigationMenu,
   NavigationMenuLink,
   NavigationMenuList,
+  Separator,
   navigationMenuTriggerStyle,
 } from "@/components/ui";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { NavigationMenuItem } from "@radix-ui/react-navigation-menu";
+import { motion } from "framer-motion";
 import React from "react";
-import { Separator } from "../ui/separator";
 
 export const socialMedia = [
   {
@@ -48,23 +49,31 @@ export const MediaList: React.FC<MediaListProp> = (props) => {
     <NavigationMenu>
       <NavigationMenuList
         className={cn(
-          "flex space-2",
-          type === "horizontal" ? "flex-col test" : "",
+          "flex",
+          type === "horizontal" ? "flex-col space-x-2 li-m-first" : "",
         )}
       >
-        {socialMedia.map((item) => (
+        {socialMedia.map((item, index) => (
           <NavigationMenuItem className="flex" key={item.id}>
-            <NavigationMenuLink
-              href={item.href}
-              target="_blank"
-              rel="noreferrer"
-              className={cn(
-                navigationMenuTriggerStyle(),
-                "flex items-center space-x-2 p-3",
-              )}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              whileTap={{ scale: 0.8 }}
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.3, delay: index * 0.1, type: "tween" }}
             >
-              {item.icon}
-            </NavigationMenuLink>
+              <NavigationMenuLink
+                href={item.href}
+                target="_blank"
+                rel="noreferrer"
+                className={cn(
+                  navigationMenuTriggerStyle(),
+                  "flex items-center space-x-2 p-3",
+                )}
+              >
+                {item.icon}
+              </NavigationMenuLink>
+            </motion.div>
           </NavigationMenuItem>
         ))}
         {separator ? (

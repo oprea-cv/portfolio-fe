@@ -96,3 +96,9 @@
     background: var(--border);
   }
 }
+
+.li-m-first > li:first-child {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}

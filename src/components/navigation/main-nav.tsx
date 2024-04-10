@@ -36,11 +36,17 @@ const itemsMenu = [
 
 export function MainNav() {
   return (
-    <div className="sm:justify mr-4 hidden md:flex">
+    <motion.header
+      className="sm:justify mr-4 hidden md:flex"
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <Link href="/" className="mr-6 flex items-center space-x-2">
         <motion.div
           className="flex items-center space-x-2"
           whileTap={{ scale: 0.8 }}
+          whileHover={{ scale: 1.1 }}
         >
           <Icons.logo className="h-6 w-6" />
           <span className="hidden font-bold sm:inline-block">
@@ -62,7 +68,8 @@ export function MainNav() {
                 x: 0,
               }}
               whileTap={{ scale: 0.8 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.3, delay: index * 0.1 }}
             >
               <NavigationMenuItem>
                 <Link href={item.href} className={navigationMenuTriggerStyle()}>
@@ -73,6 +80,6 @@ export function MainNav() {
           ))}
         </NavigationMenuList>
       </NavigationMenu>
-    </div>
+    </motion.header>
   );
 }
