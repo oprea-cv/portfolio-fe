@@ -5,10 +5,15 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { useAppSelector } from "@/store/hooks/useAppSelector";
 import { motion } from "framer-motion";
+
 import banner from "/public/assets/banner.png";
+import bannerWhite from "/public/assets/banner-white.jpg";
+import { useTheme } from "next-themes";
 
 const PreviewPage = () => {
   const isScrolling = useAppSelector((state) => state.ui.isScrolling);
+
+  const { theme } = useTheme();
 
   return (
     <RootLayout>
@@ -65,7 +70,7 @@ const PreviewPage = () => {
           }}
         >
           <Image
-            src={banner}
+            src={theme === "dark" ? banner : bannerWhite}
             alt="Hello World"
             className="w-full h-full object-cover rounded-lg opacity-50"
           />
