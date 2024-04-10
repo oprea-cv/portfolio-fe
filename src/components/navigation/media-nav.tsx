@@ -9,7 +9,9 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui";
 import { siteConfig } from "@/config/site";
+import { useMediaQuery } from "@/hooks";
 import { cn } from "@/lib/utils";
+import { breakpoints } from "@/utils/constants";
 import { NavigationMenuItem } from "@radix-ui/react-navigation-menu";
 import { motion } from "framer-motion";
 import React from "react";
@@ -45,6 +47,8 @@ interface MediaListProp {
 export const MediaList: React.FC<MediaListProp> = (props) => {
   const { type = "vertical", separator = false } = props;
 
+  const smHeight = useMediaQuery({ minHeight: breakpoints.sm });
+
   return (
     <NavigationMenu>
       <NavigationMenuList
@@ -76,7 +80,7 @@ export const MediaList: React.FC<MediaListProp> = (props) => {
             </motion.div>
           </NavigationMenuItem>
         ))}
-        {separator ? (
+        {separator && smHeight ? (
           <NavigationMenuItem className="flex items-center justify-center flex-col text-sm text-gray-500 space-y-10 mb-5">
             <Separator orientation="vertical" className="w-[2px] h-10 m-4" />
 
