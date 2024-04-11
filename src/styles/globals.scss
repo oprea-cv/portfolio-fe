@@ -73,11 +73,15 @@
 
   body {
     @apply bg-background text-foreground;
+
+    * {
+      cursor: none;
+    }
   }
 }
 
-// scroll styles all app
 @layer components {
+  /* scroll styles for all app */
   ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -95,9 +99,20 @@
   ::-webkit-scrollbar-thumb:hover {
     background: var(--border);
   }
+
+  /* For dark theme */
+  .light ::selection {
+    background-color: black;
+    color: white;
+  }
+
+  .dark ::selection {
+    background-color: white;
+    color: black;
+  }
 }
 
-.li-m-first>li:first-child {
+.li-m-first > li:first-child {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
   margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
@@ -105,4 +120,8 @@
 
 .font-virgil {
   font-family: "Virgil 3 YOFF", sans-serif;
+}
+
+.z-999 {
+  z-index: 999;
 }

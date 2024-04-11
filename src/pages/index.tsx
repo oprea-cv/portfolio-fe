@@ -6,7 +6,9 @@ import { cn } from "@/lib/utils";
 import { useAppSelector } from "@/store/hooks/useAppSelector";
 import { motion } from "framer-motion";
 
+import useCursor from "@/hooks/useCursor";
 import { useTheme } from "next-themes";
+import { useRef } from "react";
 import bannerWhite from "/public/assets/banner-white.jpg";
 import banner from "/public/assets/banner.jpg";
 
@@ -14,6 +16,8 @@ const PreviewPage = () => {
   const isScrolling = useAppSelector((state) => state.ui.isScrolling);
 
   const { resolvedTheme } = useTheme();
+  const elementRef = useRef<HTMLDivElement>(null);
+  const { handleMouseOver } = useCursor();
 
   return (
     <RootLayout>
@@ -75,7 +79,14 @@ const PreviewPage = () => {
           />
         </motion.div>
       </motion.div>
-      <div className="min-h-screen ">sfsdfsd</div>
+      <div
+        className="min-h-screen"
+        ref={elementRef}
+        onMouseEnter={() => handleMouseOver(elementRef.current)}
+        onMouseLeave={() => handleMouseOver(null)}
+      >
+        sfsdfsd
+      </div>
     </RootLayout>
   );
 };

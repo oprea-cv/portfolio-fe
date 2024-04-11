@@ -1,3 +1,4 @@
+import CustomCursor from "@/components/CustomCursor";
 import { ThemeProvider } from "@/components/shared/theme-provider";
 import { fontSans } from "@/lib/fonts";
 import { store } from "@/store";
@@ -14,6 +15,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <title>Dan</title>
       </Head>
       <Provider store={store}>
+        <CustomCursor />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
