@@ -26,7 +26,7 @@ const PreviewPage = () => {
         transition={{ duration: 0.5 }}
       >
         <motion.div
-          className="absolute inset-y-2/4"
+          className="absolute inset-y-2/4 z-10"
           initial={{
             opacity: 0,
             x: -100,
