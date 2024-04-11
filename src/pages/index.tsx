@@ -46,7 +46,7 @@ const PreviewPage = () => {
             delay: 0.3,
           }}
         >
-          <Typography.Title as="h1" className="font-bold">
+          <Typography.Title as="h1" className="font-bold font-virgil">
             Hello World!
           </Typography.Title>
         </motion.div>

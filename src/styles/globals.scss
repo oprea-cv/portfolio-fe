@@ -97,8 +97,12 @@
   }
 }
 
-.li-m-first > li:first-child {
+.li-m-first>li:first-child {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
   margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.font-virgil {
+  font-family: "Virgil 3 YOFF", sans-serif;
 }
