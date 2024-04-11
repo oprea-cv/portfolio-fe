@@ -6,37 +6,36 @@ import { cn } from "@/lib/utils";
 import { useAppSelector } from "@/store/hooks/useAppSelector";
 import { motion } from "framer-motion";
 
-import banner from "/public/assets/banner.png";
-import bannerWhite from "/public/assets/banner-white.jpg";
 import { useTheme } from "next-themes";
+import bannerWhite from "/public/assets/banner-white.jpg";
+import banner from "/public/assets/banner.jpg";
 
 const PreviewPage = () => {
   const isScrolling = useAppSelector((state) => state.ui.isScrolling);
 
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
 
   return (
     <RootLayout>
       <motion.div
-        className={cn(`p-1 relative flex align-center justify-center h-[80vh] mt-20`)}
+        className={cn(
+          `p-1 relative flex align-center justify-center h-[80vh] mt-20`,
+        )}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
         <motion.div
+          className="absolute inset-y-2/4"
           initial={{
             opacity: 0,
             x: -100,
-            position: "absolute",
-            top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
           }}
           animate={{
             opacity: 1,
             x: 0,
-            position: "absolute",
-            top: "50%",
             left: isScrolling ? "5%" : "50%",
             transform: isScrolling
               ? "translate(0, 0)"
@@ -70,7 +69,7 @@ const PreviewPage = () => {
           }}
         >
           <Image
-            src={theme === "dark" ? banner : bannerWhite}
+            src={resolvedTheme === "dark" ? banner : bannerWhite}
             alt="Hello World"
             className="w-full h-full object-cover rounded-lg opacity-50"
           />
