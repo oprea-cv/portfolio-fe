@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { useAppSelector } from "@/store/hooks/useAppSelector";
 import { motion } from "framer-motion";
 
+import ParallaxText from "@/components/animations/parallax-text/parallax-text";
 import useCursor from "@/hooks/useCursor";
 import { useTheme } from "next-themes";
 import { useRef } from "react";
@@ -79,6 +80,18 @@ const PreviewPage = () => {
           />
         </motion.div>
       </motion.div>
+      <div
+        className="min-h-screen"
+        ref={elementRef}
+        onMouseEnter={() => handleMouseOver(elementRef.current)}
+        onMouseLeave={() => handleMouseOver(null)}
+      >
+        sfsdfsd
+      </div>
+
+        <ParallaxText baseVelocity={-5}>Framer Motion</ParallaxText>
+        <ParallaxText baseVelocity={-5}>Framer Motion</ParallaxText>
+
       <div
         className="min-h-screen"
         ref={elementRef}

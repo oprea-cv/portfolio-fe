@@ -20,11 +20,11 @@ export const RootLayout = ({ children }: RootLayoutProps) => {
   const router = useRouter();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    setScrollYContainer(latest);
+    setScrollYContainer({num: latest, scrollY});
   });
 
   useEffect(() => {
-    setScrollYContainer(scrollY.get());
+    setScrollYContainer({num: scrollY.get(), scrollY});
     if (scrollRef.current) {
       scrollRef.current.scrollTop = 0;
     }
