@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { useAppSelector } from "@/store/hooks/useAppSelector";
 import { motion } from "framer-motion";
 
-export function SiteHeader() {
+const SiteHeader = () => {
   const isScrolling = useAppSelector((state) => state.ui.isScrolling);
 
   const variants = {
@@ -19,7 +19,7 @@ export function SiteHeader() {
       opacity: 1,
       maxWidth: isScrolling ? "800px" : "100%",
       top: isScrolling ? "1.5rem" : "auto",
-      margin: isScrolling ? "0" : "1rem auto",
+      margin: isScrolling ? "0" : "auto",
       borderRadius: isScrolling ? "0.5rem" : 0,
       boxShadow: isScrolling
         ? "0px 1px 0.25rem 0.125rem rgba(75, 85, 99,0.2)"
@@ -63,4 +63,6 @@ export function SiteHeader() {
       </div>
     </motion.header>
   );
-}
+};
+
+export default SiteHeader;

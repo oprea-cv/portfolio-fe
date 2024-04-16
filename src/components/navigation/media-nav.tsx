@@ -53,7 +53,7 @@ export const MediaList: React.FC<MediaListProp> = (props) => {
     <NavigationMenu>
       <NavigationMenuList
         className={cn(
-          "flex",
+          "flex gap-1",
           type === "horizontal" ? "flex-col space-x-2 li-m-first" : "",
         )}
       >

@@ -10,14 +10,13 @@ import {
 } from "framer-motion";
 import { useRef } from "react";
 
-import { Plaster } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { Plaster } from "next/font/google";
 
 const plaster = Plaster({
-    subsets: ["latin"],
-    variable: "--font-plaster",
-    weight: "400",
-    
+  subsets: ["latin"],
+  variable: "--font-plaster",
+  weight: "400",
 });
 
 interface ParallaxProps {
@@ -25,13 +24,13 @@ interface ParallaxProps {
   baseVelocity: number;
 }
 
-function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
+const ParallaxText = ({ children, baseVelocity = 100 }: ParallaxProps) => {
   const baseX = useMotionValue(0);
   const scrollY = useAppSelector((state) => state.ui.scrollY);
 
-//   console.log(scrollY);
-  
-  const scrollVelocity = useVelocity(scrollY)
+  //   console.log(scrollY);
+
+  const scrollVelocity = useVelocity(scrollY);
   const smoothVelocity = useSpring(scrollVelocity, {
     damping: 50,
     stiffness: 400,
@@ -49,7 +48,7 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
 
   const directionFactor = useRef<number>(1);
   useAnimationFrame((t, delta) => {
-    let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
+    let moveBy = directionFactor.current * baseVelocity * (delta / 2000);
 
     /**
      * This is what changes the direction of the scroll once we
@@ -74,18 +73,29 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
    * dynamically generated number of children.
    */
   return (
-    <div className={cn(
-        `parallax`,
+    <div
+      className={cn(
+        `overflow-hidden`,
+        `letter-spacing-2`,
+        `line-height-80`,
+        `m-0`,
+        `whitespace-nowrap`,
+        `flex`,
+        `flex-nowrap`,
         plaster.className,
-    )}>
-      <motion.div className="scroller" style={{ x }}>
-        <span>{children} </span>
-        <span>{children} </span>
-        <span>{children} </span>
-        <span>{children} </span>
+      )}
+    >
+      <motion.div
+        className="uppercase text-6xl flex whitespace-nowrap"
+        style={{ x }}
+      >
+        <span className="mr-8">{children}</span>
+        <span className="mr-8">{children}</span>
+        <span className="mr-8">{children}</span>
+        <span className="mr-8">{children}</span>
       </motion.div>
     </div>
   );
-}
+};
 
 export default ParallaxText;

@@ -20,11 +20,11 @@ export const RootLayout = ({ children }: RootLayoutProps) => {
   const router = useRouter();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    setScrollYContainer({num: latest, scrollY});
+    setScrollYContainer({ num: latest, scrollY });
   });
 
   useEffect(() => {
-    setScrollYContainer({num: scrollY.get(), scrollY});
+    setScrollYContainer({ num: scrollY.get(), scrollY });
     if (scrollRef.current) {
       scrollRef.current.scrollTop = 0;
     }
@@ -40,9 +40,8 @@ export const RootLayout = ({ children }: RootLayoutProps) => {
     >
       <div className="flex h-screen flex-col px-2">
         <SiteHeader />
-        <section className="max-w-screen-2xl p-4 mx-auto w-full flex-1 relative">
-          {children}
-        </section>
+
+        {children}
 
         <motion.div
           initial={{
