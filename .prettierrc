@@ -8,5 +8,9 @@
   "quoteProps": "as-needed",
   "semi": true,
   "tabWidth": 2,
-  "plugins": ["prettier-plugin-tailwindcss"]
+  "plugins": [
+    "prettier-plugin-tailwindcss",
+    "@trivago/prettier-plugin-sort-imports",
+    "prettier-plugin-organize-imports"
+  ]
 }

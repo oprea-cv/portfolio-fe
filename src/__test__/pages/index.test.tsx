@@ -1,8 +1,6 @@
-import React from "react";
-import { render, screen } from "@testing-library/react";
 import PreviewPage from "@pages/index";
-
 import "@testing-library/jest-dom";
+import { render, screen } from "@testing-library/react";
 
 // Mock ResizeObserver
 global.ResizeObserver = jest.fn(() => ({
