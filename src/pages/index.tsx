@@ -12,6 +12,7 @@ import { useTheme } from "next-themes";
 import { useRef } from "react";
 import bannerWhite from "/public/assets/banner-white.jpg";
 import banner from "/public/assets/banner.jpg";
+import ButtonObject from "@/components/animations/ButtonObject/Button";
 
 const PreviewPage = () => {
   const isScrolling = useAppSelector((state) => state.ui.isScrolling);
@@ -104,7 +105,7 @@ const PreviewPage = () => {
           onMouseEnter={() => handleMouseOver(elementRef.current)}
           onMouseLeave={() => handleMouseOver(null)}
         >
-          sfsdfsd
+          <ButtonObject />
         </div>
       </AppSection>
     </RootLayout>
