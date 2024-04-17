@@ -1,4 +1,4 @@
-import CustomCursor from "@/components/CustomCursor";
+import CustomCursor from "@/components/custom-cursor";
 import { ThemeProvider } from "@/components/shared/theme-provider";
 import { fontSans } from "@/lib/fonts";
 import { store } from "@/store";

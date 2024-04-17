@@ -1,2 +1,2 @@
-export { default as useCursor } from "./useCursor";
-export { default as useMediaQuery } from "./useMediaQuery";
+export { default as useCursor } from "./use-cursor";
+export { default as useMediaQuery } from "./use-media-query";

@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 import { ParallaxText } from "@/components/animations";
 import { AppSection, RootLayout } from "@/components/layout";
-import useCursor from "@/hooks/useCursor";
+import useCursor from "@/hooks/use-cursor";
 import { useTheme } from "next-themes";
 import { useRef } from "react";
 import bannerWhite from "/public/assets/banner-white.jpg";
